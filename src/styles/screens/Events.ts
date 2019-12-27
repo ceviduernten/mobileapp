@@ -9,38 +9,70 @@ export default StyleSheet.create({
     },
     item: {
         backgroundColor: colors.darkBackground,
-        padding: 20,
+        padding: 8,
         marginVertical: 8,
         marginHorizontal: 16,
         borderRadius: 10,
-        marginBottom: 15,
+        display: 'flex',
+        flexDirection: 'row',
     },
     itemTitle: {
-        backgroundColor: colors.darkAccentColor,
+        backgroundColor: colors.ceviBlue,
+        padding: 20,
+        marginVertical: 8,
+        marginHorizontal: 16,
+        borderRadius: 10,
+        marginBottom: 15,
+        display: 'flex',
+        flexDirection: 'row',
+    },
+    detailIcon: {
+        paddingRight: 16,
+        color: colors.white
+    },
+    icon: {
+        color: colors.ceviRed
+    },
+    eventIcon: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: 8,
+        paddingRight: 16,
+        width: 55
+    },
+    eventTitle: {
+
+    },
+    title: {
+        fontSize: 24,
+        color: colors.ceviBlue,
+        textTransform: "uppercase"
+    },
+    date: {
+        fontSize: 16,
+        fontWeight: "300",
+        color: colors.black,
+    },
+    detailMainHeader: {
+        fontSize: 20,
+        color: colors.white,
+        fontWeight: "700",
+        textTransform: "uppercase",
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingTop: 2
+    },
+    detailInfoItem: {
+        backgroundColor: colors.darkBackground,
         padding: 20,
         marginVertical: 8,
         marginHorizontal: 16,
         borderRadius: 10,
         marginBottom: 15,
     },
-    title: {
-        fontSize: 28,
-        color: colors.rizBlue,
-        textTransform: "uppercase"
-    },
-    subTitle: {
+    detailInfoTitle: {
         fontSize: 20,
-        fontWeight: "300"
-    },
-    detailMainHeader: {
-        fontSize: 28,
-        color: colors.white,
         fontWeight: "700",
-        textTransform: "uppercase"
-    },
-    detailMainTitle: {
-        fontSize: 20,
-        color: colors.black,
         textTransform: "uppercase"
     }
 });

@@ -2,6 +2,7 @@ import React from "react";
 import {createAppContainer} from "react-navigation";
 import {createStackNavigator} from "react-navigation-stack";
 import EventsContainer from "../../containers/EventsContainer";
+import EventDetail from "../../screens/events/EventDetail";
 
 const EventsNavigation = createStackNavigator({
         ListScreen: {
@@ -11,9 +12,9 @@ const EventsNavigation = createStackNavigator({
             }
         },
         DetailScreen: {
-            screen: EventsContainer,
+            screen: EventDetail,
             navigationOptions: {
-                title: "Details zur Information"
+                title: "Details zum Anlass"
             }
         },
     },{
