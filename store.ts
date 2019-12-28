@@ -10,7 +10,7 @@ const persistConfig = {
     key: 'root',
     storage: AsyncStorage,
     stateReconciler: autoMergeLevel2,
-    whiteList: []
+    whiteList: ['groups', 'contacts']
 };
 
 const middleware = applyMiddleware(promise, thunk);

@@ -6,6 +6,8 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 import HomeNavigation from "./tab/HomeNavigation";
 import EventsNavigation from "./tab/EventsNavigation";
 import {StyleSheet} from "react-native";
+import AppointmentsNavigation from "./tab/AppointmentsNavigation";
+import ContactsNavigation from "./tab/ContactsNavigation";
 
 const TabNavigation = createBottomTabNavigator({
         Home: {
@@ -23,17 +25,24 @@ const TabNavigation = createBottomTabNavigator({
             }
         },
         Appointments: {
-            screen: HomeNavigation,
+            screen: AppointmentsNavigation,
             navigationOptions: {
                 tabBarIcon: ({tintColor}) => ( <Icon name={'fire'} size={22} style={{color: tintColor}} />),
-                tabBarLabel: "Chästli"
+                tabBarLabel: "Chästlizettel"
             }
         },
         Contacts: {
-            screen: HomeNavigation,
+            screen: ContactsNavigation,
             navigationOptions: {
                 tabBarIcon: ({tintColor}) => ( <Icon name={'address-card'} size={22} style={{color: tintColor}} />),
                 tabBarLabel: "Kontakte"
+            }
+        },
+        Info: {
+            screen: HomeNavigation,
+            navigationOptions: {
+                tabBarIcon: ({tintColor}) => ( <Icon name={'info'} size={22} style={{color: tintColor}} />),
+                tabBarLabel: "Info"
             }
         },
     },{

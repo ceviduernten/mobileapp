@@ -4,12 +4,11 @@ import {IAction} from "../interfaces/actions";
 interface ContactReducerState {
     state: string,
     errorMessage: string,
-    data: any[],
-    selectedObject: object
+    data: object
 }
 
 const defaultState = {
-    data: [],
+    data: {},
     state: "success",
     errorMessage: "",
     selectedObject: {}
@@ -20,9 +19,7 @@ const contactReducer = (state : ContactReducerState = defaultState, action: IAct
         case types.SET_CONTACTS_CURRENT_STATE:
             return {...state, state: action.data};
         case types.SET_CONTACTS_ERROR:
-            return {...state, errorMessage: action.data, data: [], state: "error"};
-        case types.SET_CONTACTS_SELECTED_OBJECT:
-            return {...state, selectedObject : action.data};
+            return {...state, errorMessage: action.data, data: {}, state: "error"};
         case types.SET_CONTACTS:
             return Object.assign({}, state, {
                 data: action.data,

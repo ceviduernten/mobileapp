@@ -65,3 +65,22 @@ export function getContacts() {
         })
     }));
 }
+
+export function getGroups() {
+    return new Promise<any>(((resolve, reject) => {
+        let apiClient = getAPIConfigurationSecured();
+        return apiClient({
+            url: apiLinks.GROUPS,
+            method: 'get'
+        }).then(function (response) {
+            if (response.data.statusCode === 200) {
+                resolve(response.data.data);
+            } else {
+                reject(response.data.message);
+            }
+        }).catch(function (error) {
+            console.log(error);
+            reject("Daten konnten nicht geladen werden");
+        })
+    }));
+}

@@ -3,10 +3,10 @@
 <plist version="1.0">
 <dict>
 	<key>application-identifier</key>
-	<string>FAKETEAMID.ch.ceviduernten.app</string>
+	<string>64C3N566R2.ch.ceviduernten.app</string>
 	<key>keychain-access-groups</key>
 	<array>
-		<string>FAKETEAMID.ch.ceviduernten.app</string>
+		<string>64C3N566R2.ch.ceviduernten.app</string>
 	</array>
 </dict>
 </plist>

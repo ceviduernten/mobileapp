@@ -18,11 +18,11 @@ export default StyleSheet.create({
     },
     itemTitle: {
         backgroundColor: colors.ceviBlue,
-        padding: 20,
+        padding: 16,
         marginVertical: 8,
         marginHorizontal: 16,
         borderRadius: 10,
-        marginBottom: 15,
+        marginBottom: 10,
         display: 'flex',
         flexDirection: 'row',
     },
@@ -64,15 +64,15 @@ export default StyleSheet.create({
     },
     detailInfoItem: {
         backgroundColor: colors.darkBackground,
-        padding: 20,
+        padding: 16,
         marginVertical: 8,
         marginHorizontal: 16,
         borderRadius: 10,
-        marginBottom: 15,
+        marginBottom: 10,
     },
     detailInfoTitle: {
         fontSize: 20,
         fontWeight: "700",
         textTransform: "uppercase"
-    }
+    },
 });
