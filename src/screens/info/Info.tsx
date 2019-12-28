@@ -1,4 +1,4 @@
-import React, {Component, ReactElement} from "react";
+import React, {Component} from "react";
 import {SafeAreaView, ScrollView, Text, TouchableOpacity, View} from "react-native";
 import styles from "../../styles/screens/Info";
 import Icon from "react-native-vector-icons/FontAwesome5";

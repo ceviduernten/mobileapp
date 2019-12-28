@@ -5,7 +5,6 @@ import colors from "../styles/colors";
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import HomeNavigation from "./tab/HomeNavigation";
 import EventsNavigation from "./tab/EventsNavigation";
-import {StyleSheet} from "react-native";
 import AppointmentsNavigation from "./tab/AppointmentsNavigation";
 import ContactsNavigation from "./tab/ContactsNavigation";
 import InfoNavigation from "./tab/InfoNavigation";

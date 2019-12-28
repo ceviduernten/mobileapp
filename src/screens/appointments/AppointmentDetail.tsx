@@ -1,7 +1,6 @@
 import React, {Component, ReactElement} from "react";
 import {SafeAreaView, Text, View} from "react-native";
 import styles from "../../styles/screens/Appointments";
-import store from "../../../store";
 import Icon from "react-native-vector-icons/FontAwesome5";
 import * as objectHelper from "../../helpers/ObjectHelper";
 import moment from "moment";

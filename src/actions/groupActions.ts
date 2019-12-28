@@ -1,5 +1,4 @@
 import * as types from "./actionTypes";
-import * as api from "../api/api";
 
 function receiveGroups(data : any) {
     return {

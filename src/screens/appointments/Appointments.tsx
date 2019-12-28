@@ -6,7 +6,6 @@ import * as groupActions from "../../actions/groupActions";
 import * as appointmentActions from "../../actions/appointmentActions";
 import * as eventHelpers from "../../helpers/EventHelpers";
 import Icon from "react-native-vector-icons/FontAwesome5";
-import moment from "moment";
 
 export default class Appointments extends Component<any, any> {
     constructor(props: any) {

@@ -1,5 +1,4 @@
 import * as types from "./actionTypes";
-import * as api from "../api/api";
 
 function receiveContacts(data : any) {
     return {

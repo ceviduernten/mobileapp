@@ -1,5 +1,5 @@
-import React, {Component, ReactElement} from "react";
-import {SafeAreaView, ScrollView, Text, TouchableOpacity, View} from "react-native";
+import React, {Component} from "react";
+import {SafeAreaView, ScrollView, Text, View} from "react-native";
 import styles from "../../styles/screens/Info";
 import Icon from "react-native-vector-icons/FontAwesome5";
 
