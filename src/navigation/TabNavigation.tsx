@@ -8,6 +8,7 @@ import EventsNavigation from "./tab/EventsNavigation";
 import {StyleSheet} from "react-native";
 import AppointmentsNavigation from "./tab/AppointmentsNavigation";
 import ContactsNavigation from "./tab/ContactsNavigation";
+import InfoNavigation from "./tab/InfoNavigation";
 
 const TabNavigation = createBottomTabNavigator({
         Home: {
@@ -39,10 +40,10 @@ const TabNavigation = createBottomTabNavigator({
             }
         },
         Info: {
-            screen: HomeNavigation,
+            screen: InfoNavigation,
             navigationOptions: {
                 tabBarIcon: ({tintColor}) => ( <Icon name={'info'} size={22} style={{color: tintColor}} />),
-                tabBarLabel: "Info"
+                tabBarLabel: "Über uns"
             }
         },
     },{
