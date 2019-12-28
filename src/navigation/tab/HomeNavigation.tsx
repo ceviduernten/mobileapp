@@ -7,11 +7,12 @@ const HomeNavigation = createStackNavigator({
         Home: {
             screen: Home,
             navigationOptions: {
-                title: "Home"
+                title: "Home",
+                header: null,
             }
         }
     },{
-        initialRouteName: 'Home',
+        initialRouteName: 'Home'
     }
 );
 
