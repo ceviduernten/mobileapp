@@ -1,5 +1,5 @@
-import React, {Component} from "react";
-import {FlatList, SafeAreaView, Text, TouchableOpacity, View} from "react-native";
+import React, {Component, ReactElement} from "react";
+import {FlatList, SafeAreaView, ScrollView, Text, TouchableOpacity, View} from "react-native";
 import styles from "../../styles/screens/Appointments";
 import store from "../../../store";
 import * as groupActions from "../../actions/groupActions";
@@ -27,6 +27,54 @@ export default class Appointments extends Component<any, any> {
         this.props.navigation.navigate('DetailScreen', "detail");
     }
 
+    renderGroups() : ReactElement {
+        const {groups, store} = this.props;
+        let refreshing = store.state === "loading";
+        return (
+            <FlatList
+                data={groups}
+                keyExtractor={(item : any) => item.idGroup}
+                onRefresh={this.handleRefresh}
+                refreshing={refreshing}
+                renderItem={({item}) => {
+                    return (
+                        (
+                            <TouchableOpacity onPress={() => this.onPress(item)}>
+                                <View style={styles.item}>
+                                    <Text style={styles.title}>{item.name}</Text>
+                                </View>
+                            </TouchableOpacity>
+                        )
+                    )
+                }}
+            />
+        )
+    }
+
+    renderError(errorMessage : string) : ReactElement {
+        return (
+            <View>
+                <View style={styles.infoItem}>
+                    <Text>{errorMessage}</Text>
+                </View>
+            </View>
+        )
+    }
+
+    renderEmptyView(errorMessage : string) : ReactElement {
+        if (errorMessage === "") {
+            return (
+                <View>
+                    <View style={styles.infoItem}>
+                        <Text>Keine Daten vorhanden</Text>
+                    </View>
+                </View>
+            )
+        } else {
+            return this.renderError(errorMessage);
+        }
+    }
+
     render() {
         const {groups, store} = this.props;
         let refreshing = store.state === "loading";
@@ -41,9 +89,8 @@ export default class Appointments extends Component<any, any> {
                     keyExtractor={(item : any) => item.idGroup}
                     onRefresh={this.handleRefresh}
                     refreshing={refreshing}
+                    ListEmptyComponent={this.renderEmptyView(store.errorMessage)}
                     renderItem={({item}) => {
-                        let icon = eventHelpers.getTypeIcon(item.eventType);
-                        let sameDay = eventHelpers.sameDay(new Date(item.start), new Date(item.end));
                         return (
                             (
                                 <TouchableOpacity onPress={() => this.onPress(item)}>

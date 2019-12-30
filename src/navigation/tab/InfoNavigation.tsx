@@ -10,29 +10,30 @@ const InfoNavigation = createStackNavigator({
         Info: {
             screen: Info,
             navigationOptions: {
-                title: "Informationen"
+                title: "Informationen",
+                headerBackTitle: 'Zurück'
             }
         },
         Jungschar: {
             screen: InfoJungschar,
             navigationOptions: {
-                title: "Arbeitsgebiet Jungschar"
+                title: "Jungschar",
             }
         },
         Froeschli: {
             screen: InfoFroeschli,
             navigationOptions: {
-                title: "Arbeitsgebiet Fröschli"
+                title: "Arbeitsgebiet Fröschli",
             }
         },
         CeviEh: {
             screen: InfoCeviEh,
             navigationOptions: {
-                title: "Arbeitsgebiet Cevi-Eh!"
+                title: "Arbeitsgebiet Cevi-Eh!",
             }
         },
     },{
-        initialRouteName: 'Info',
+        initialRouteName: 'Info'
     }
 );
 

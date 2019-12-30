@@ -46,6 +46,7 @@
 		8C0E9F8123B3AEEC00AECAAF /* Foundation.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Foundation.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		8C0E9F8223B3AEEC00AECAAF /* Zocial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Zocial.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		8C0E9F8323B3AEEC00AECAAF /* Feather.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Feather.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
+		8CCB94DE23BA723D00039502 /* de-CH */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "de-CH"; path = "de-CH.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		CA15194B83F8C5B4A443F2C0 /* libPods-CeviDuerntenApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CeviDuerntenApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA6101055410F27D25AD3481 /* Pods-CeviDuerntenApp-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CeviDuerntenApp-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-CeviDuerntenApp-tvOSTests/Pods-CeviDuerntenApp-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		D4B34AE5C9F679DF7B3E138B /* libPods-CeviDuerntenApp-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CeviDuerntenApp-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -222,12 +223,11 @@
 			};
 			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "CeviDuerntenApp" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = "de-CH";
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
-				en,
 				Base,
+				"de-CH",
 			);
 			mainGroup = 83CBB9F61A601CBA00E9B192;
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
@@ -374,6 +374,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				13B07FB21A68108700A75B9A /* Base */,
+				8CCB94DE23BA723D00039502 /* de-CH */,
 			);
 			name = LaunchScreen.xib;
 			path = CeviDuerntenApp;

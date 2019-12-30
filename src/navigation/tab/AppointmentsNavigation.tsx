@@ -8,13 +8,14 @@ const AppointmentsNavigation = createStackNavigator({
         ListScreen: {
             screen: AppointmentsContainer,
             navigationOptions: {
-                title: "Chästlizettel"
+                title: "Chästlizettel",
+                headerBackTitle: "Zurück"
             }
         },
         DetailScreen: {
             screen: DetailAppointmentContainer,
             navigationOptions: {
-                title: "Chästlizettel für Gruppe XXX"
+                title: "Gruppe XXX",
             }
         },
     },{

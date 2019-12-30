@@ -1,6 +1,8 @@
 import axios from "axios";
 import * as apiLinks from "./apiLinks";
 
+const errorMessageApi = "Daten konnten nicht geladen werden. \n\nKeine Verbindung zum Server vorhanden.";
+
 function getAPIConfigurationSecured() {
     const token = "testtoken";
     return axios.create({
@@ -31,7 +33,7 @@ function getAPIConfigurationUnsecured() {
 
 export function getEvents() {
     return new Promise<any>(((resolve, reject) => {
-        let apiClient = getAPIConfigurationSecured();
+        let apiClient = getAPIConfigurationUnsecured();
         return apiClient({
             url: apiLinks.EVENTS,
             method: 'get'
@@ -43,14 +45,14 @@ export function getEvents() {
             }
         }).catch(function (error) {
             console.log(error);
-            reject("Daten konnten nicht geladen werden");
+            reject(errorMessageApi);
         })
     }));
 }
 
 export function getContacts() {
     return new Promise<any>(((resolve, reject) => {
-        let apiClient = getAPIConfigurationSecured();
+        let apiClient = getAPIConfigurationUnsecured();
         return apiClient({
             url: apiLinks.CONTACTS,
             method: 'get'
@@ -61,14 +63,14 @@ export function getContacts() {
                 reject(response.data.message);
             }
         }).catch(function (error) {
-            reject("Daten konnten nicht geladen werden");
+            reject(errorMessageApi);
         })
     }));
 }
 
 export function getGroups() {
     return new Promise<any>(((resolve, reject) => {
-        let apiClient = getAPIConfigurationSecured();
+        let apiClient = getAPIConfigurationUnsecured();
         return apiClient({
             url: apiLinks.GROUPS,
             method: 'get'
@@ -80,14 +82,14 @@ export function getGroups() {
             }
         }).catch(function (error) {
             console.log(error);
-            reject("Daten konnten nicht geladen werden");
+            reject(errorMessageApi);
         })
     }));
 }
 
 export function getNextAppointmentOfGroup(group : string) {
     return new Promise<any>(((resolve, reject) => {
-        let apiClient = getAPIConfigurationSecured();
+        let apiClient = getAPIConfigurationUnsecured();
         return apiClient({
             url: apiLinks.APPOINTMENTS + "/" + group + "/next",
             method: 'get'
@@ -99,7 +101,7 @@ export function getNextAppointmentOfGroup(group : string) {
             }
         }).catch(function (error) {
             console.log(error);
-            reject("Daten konnten nicht geladen werden");
+            reject(errorMessageApi);
         })
     }));
 }

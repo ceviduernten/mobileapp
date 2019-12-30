@@ -14,6 +14,13 @@ export default StyleSheet.create({
         marginHorizontal: 16,
         borderRadius: 10
     },
+    infoItem: {
+        backgroundColor: colors.darkBackground,
+        padding: 16,
+        marginVertical: 8,
+        marginHorizontal: 16,
+        borderRadius: 10
+    },
     itemTitle: {
         backgroundColor: colors.ceviBlue,
         padding: 20,

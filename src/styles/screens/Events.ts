@@ -16,6 +16,13 @@ export default StyleSheet.create({
         display: 'flex',
         flexDirection: 'row',
     },
+    infoItem: {
+        backgroundColor: colors.darkBackground,
+        padding: 16,
+        marginVertical: 8,
+        marginHorizontal: 16,
+        borderRadius: 10
+    },
     itemTitle: {
         backgroundColor: colors.ceviBlue,
         padding: 16,

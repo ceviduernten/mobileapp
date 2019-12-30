@@ -6,40 +6,6 @@
 	<integer>10</integer>
 	<key>logs</key>
 	<dict>
-		<key>59D3797A-1E49-458D-BDC4-850B289A3CB6</key>
-		<dict>
-			<key>className</key>
-			<string>IDECommandLineBuildLog</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
-			<key>fileName</key>
-			<string>59D3797A-1E49-458D-BDC4-850B289A3CB6.xcactivitylog</string>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>W</string>
-			</dict>
-			<key>schemeIdentifier-containerName</key>
-			<string>CeviDuerntenApp project</string>
-			<key>schemeIdentifier-schemeName</key>
-			<string>CeviDuerntenApp</string>
-			<key>schemeIdentifier-sharedScheme</key>
-			<integer>1</integer>
-			<key>signature</key>
-			<string>Building workspace CeviDuerntenApp with scheme CeviDuerntenApp and configuration Debug</string>
-			<key>timeStartedRecording</key>
-			<real>599134775.285689</real>
-			<key>timeStoppedRecording</key>
-			<real>599134776.32514</real>
-			<key>title</key>
-			<string>Building workspace CeviDuerntenApp with scheme CeviDuerntenApp and configuration Debug</string>
-			<key>uniqueIdentifier</key>
-			<string>59D3797A-1E49-458D-BDC4-850B289A3CB6</string>
-		</dict>
 		<key>B28621F8-F084-48F3-BF41-7B9005650161</key>
 		<dict>
 			<key>className</key>

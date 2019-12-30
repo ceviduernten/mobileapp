@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, {Component, ReactElement} from "react";
 import {FlatList, SafeAreaView, Text, TouchableOpacity, View} from "react-native";
 import styles from "../../styles/screens/Events";
 import store from "../../../store";
@@ -26,6 +26,26 @@ export default class Events extends Component<any, any> {
         this.props.navigation.navigate('DetailScreen', "detail");
     }
 
+    renderEmptyView(errorMessage : string) : ReactElement {
+        if (errorMessage === "") {
+            return (
+                <View>
+                    <View style={styles.infoItem}>
+                        <Text>Keine Daten vorhanden</Text>
+                    </View>
+                </View>
+            )
+        } else {
+            return (
+                <View>
+                    <View style={styles.infoItem}>
+                        <Text>{errorMessage}</Text>
+                    </View>
+                </View>
+            )
+        }
+    }
+
     render() {
         const {events, store} = this.props;
         let refreshing = store.state === "loading";
@@ -36,6 +56,7 @@ export default class Events extends Component<any, any> {
                     keyExtractor={(item : any) => item.uid}
                     onRefresh={this.handleRefresh}
                     refreshing={refreshing}
+                    ListEmptyComponent={this.renderEmptyView(store.errorMessage)}
                     renderItem={({item}) => {
                         let icon = eventHelpers.getTypeIcon(item.eventType);
                         let sameDay = eventHelpers.sameDay(new Date(item.start), new Date(item.end));

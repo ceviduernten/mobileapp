@@ -8,8 +8,9 @@ const EventsNavigation = createStackNavigator({
         ListScreen: {
             screen: EventsContainer,
             navigationOptions: {
-                title: "Unsere nächsten Anlässe"
-            }
+                title: "Unsere nächsten Anlässe",
+                headerBackTitle: "Liste"
+            },
         },
         DetailScreen: {
             screen: EventDetail,
@@ -19,6 +20,9 @@ const EventsNavigation = createStackNavigator({
         },
     },{
         initialRouteName: 'ListScreen',
+        defaultNavigationOptions: {
+
+        }
     }
 );
 
