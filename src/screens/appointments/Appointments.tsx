@@ -1,10 +1,9 @@
 import React, {Component, ReactElement} from "react";
-import {FlatList, SafeAreaView, ScrollView, Text, TouchableOpacity, View} from "react-native";
+import {FlatList, SafeAreaView, Text, TouchableOpacity, View} from "react-native";
 import styles from "../../styles/screens/Appointments";
 import store from "../../../store";
 import * as groupActions from "../../actions/groupActions";
 import * as appointmentActions from "../../actions/appointmentActions";
-import * as eventHelpers from "../../helpers/EventHelpers";
 import Icon from "react-native-vector-icons/FontAwesome5";
 
 export default class Appointments extends Component<any, any> {

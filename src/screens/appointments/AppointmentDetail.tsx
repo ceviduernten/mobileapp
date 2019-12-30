@@ -11,7 +11,7 @@ export default class AppointmentDetail extends Component<any, any> {
     }
 
     renderDetailAppointment() : ReactElement {
-        const {group, store, appointment} = this.props;
+        const {appointment} = this.props;
         return (
             <>
                 <View style={styles.detailInfoItem}>

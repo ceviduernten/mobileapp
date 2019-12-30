@@ -3,7 +3,6 @@ import * as api from "../api/api";
 
 
 function receiveAppointment(data : any) {
-    console.log(data);
     return {
         type : types.SET_APPOINTMENTS,
         data : data

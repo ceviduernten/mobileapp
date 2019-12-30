@@ -52,12 +52,12 @@ const TabNavigation = createBottomTabNavigator({
                 backgroundColor: colors.white,
                 paddingTop: 4
             },
-                activeTintColor: colors.ceviBlue,
-                inactiveTintColor: colors.ceviRed,
-                showLabel: true,
-                showIcon: true,
-                adaptive: true,
-                keyboardHidesTabBar: true
+            activeTintColor: colors.ceviBlue,
+            inactiveTintColor: colors.ceviRed,
+            showLabel: true,
+            showIcon: true,
+            adaptive: true,
+            keyboardHidesTabBar: true
         },
     }
 );

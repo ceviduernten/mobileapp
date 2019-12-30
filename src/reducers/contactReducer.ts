@@ -10,8 +10,7 @@ interface ContactReducerState {
 const defaultState = {
     data: {},
     state: "success",
-    errorMessage: "",
-    selectedObject: {}
+    errorMessage: ""
 };
 
 const contactReducer = (state : ContactReducerState = defaultState, action: IAction) => {

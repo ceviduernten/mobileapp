@@ -10,7 +10,6 @@ export default class Info extends Component<any, any> {
     }
 
     onPress(section : any) : any {
-        console.log(section);
         this.props.navigation.navigate(section, section);
     }
 

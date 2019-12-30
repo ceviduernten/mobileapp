@@ -6,7 +6,6 @@ export function sameDay(dateOne : any, dateTwo : any) : boolean {
     const b = moment(dateTwo);
     const dateDiff = b.diff(a, 'days');
     const daysLeft = dateDiff !== null && !isNaN(dateDiff) ? dateDiff : 0;
-    console.log(a.hours());
     return daysLeft === 0 || (daysLeft === 1 && (a.hours() === 1 && b.hours() === 1));
 }
 

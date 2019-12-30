@@ -14,7 +14,6 @@ export default class EventDetail extends Component<any, any> {
     render() {
         const event = (store.getState() as any).events.selectedObject;
         let sameDay = eventHelpers.sameDay(new Date(event.start), new Date(event.end));
-        console.log(sameDay);
         return (
             <SafeAreaView style={styles.wrapper}>
                 <View style={styles.itemTitle}>
