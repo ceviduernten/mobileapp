@@ -14,8 +14,10 @@ const AppointmentsNavigation = createStackNavigator({
         },
         DetailScreen: {
             screen: DetailAppointmentContainer,
-            navigationOptions: {
-                title: "Gruppe XXX",
+            navigationOptions:({ navigation }) => {
+                return {
+                    title: navigation.getParam('title', 'Gruppe'),
+                };
             }
         },
     },{

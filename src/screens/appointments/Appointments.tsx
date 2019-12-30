@@ -24,7 +24,7 @@ export default class Appointments extends Component<any, any> {
     onPress(group : any) : any {
         store.dispatch(groupActions.setCurrentGroup(group));
         store.dispatch(appointmentActions.getAppointmentOfGroup(group.idGroup));
-        this.props.navigation.navigate('DetailScreen', "detail");
+        this.props.navigation.navigate('DetailScreen', {title : group.name});
     }
 
     renderGroups() : ReactElement {
