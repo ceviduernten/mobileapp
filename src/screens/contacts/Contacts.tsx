@@ -4,6 +4,7 @@ import styles from "../../styles/screens/Contacts";
 import store from "../../../store";
 import * as contactActions from "../../actions/contactActions";
 import Icon from "react-native-vector-icons/FontAwesome5";
+import {isEmpty} from "../../helpers/ObjectHelper";
 
 export default class Contacts extends Component<any, any> {
     constructor(props: any) {
@@ -15,7 +16,8 @@ export default class Contacts extends Component<any, any> {
     }
 
     renderContactSection(section : string) : ReactElement {
-        const {contacts, store} = this.props;
+        const {contacts} = this.props;
+        if (isEmpty(contacts)) return <></>;
         return contacts[section].map((item : any) => {
             return (
                 <View style={styles.contactItem} key={item.idContact}>

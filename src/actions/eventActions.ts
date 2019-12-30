@@ -41,6 +41,7 @@ function getEventsFromAPI(dispatch : any) : any {
     api.getEvents().then(function (res) {
         dispatch(receiveEvents(res));
     }).catch(function (error) {
+        console.log(error);
         dispatch(receiveEventsError(error));
     });
 }
