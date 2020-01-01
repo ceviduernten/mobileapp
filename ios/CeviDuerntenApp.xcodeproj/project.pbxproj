@@ -16,8 +16,6 @@
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
-		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* CeviDuerntenAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CeviDuerntenAppTests.m; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* Cevi Dürnten.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cevi Dürnten.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = CeviDuerntenApp/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = CeviDuerntenApp/AppDelegate.m; sourceTree = "<group>"; };
@@ -70,23 +68,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356EF1AD99517003FC87E /* CeviDuerntenAppTests */ = {
-			isa = PBXGroup;
-			children = (
-				00E356F21AD99517003FC87E /* CeviDuerntenAppTests.m */,
-				00E356F01AD99517003FC87E /* Supporting Files */,
-			);
-			path = CeviDuerntenAppTests;
-			sourceTree = "<group>";
-		};
-		00E356F01AD99517003FC87E /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				00E356F11AD99517003FC87E /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		13B07FAE1A68108700A75B9A /* CeviDuerntenApp */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,7 +108,6 @@
 			children = (
 				13B07FAE1A68108700A75B9A /* CeviDuerntenApp */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* CeviDuerntenAppTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				D03F833089FBB9B66C377D33 /* Pods */,
@@ -400,6 +380,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ch.ceviduernten.app;
 				PRODUCT_NAME = "Cevi Dürnten";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -420,6 +401,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ch.ceviduernten.app;
 				PRODUCT_NAME = "Cevi Dürnten";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;

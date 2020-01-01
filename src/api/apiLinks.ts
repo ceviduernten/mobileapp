@@ -1,4 +1,4 @@
-const HOST_API = "https://ceviduernten.ch";
+const HOST_API = "https://api.ceviduernten.ch";
 
 export const EVENTS = HOST_API + "/Events";
 export const CONTACTS = HOST_API + "/Contacts";
