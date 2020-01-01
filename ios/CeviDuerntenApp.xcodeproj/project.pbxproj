@@ -378,9 +378,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ch.ceviduernten.app;
+				PRODUCT_BUNDLE_IDENTIFIER = ch.ceviduernten.mobileapp;
 				PRODUCT_NAME = "Cevi Dürnten";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -399,9 +399,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ch.ceviduernten.app;
+				PRODUCT_BUNDLE_IDENTIFIER = ch.ceviduernten.mobileapp;
 				PRODUCT_NAME = "Cevi Dürnten";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
