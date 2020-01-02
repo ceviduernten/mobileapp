@@ -14,7 +14,7 @@ export default StyleSheet.create({
                 paddingTop: 80,
             },
             android: {
-                paddingTop: 20,
+                paddingTop: 50,
             },
         }),
     },
