@@ -53,7 +53,7 @@ export default class InfoJungschar extends Component<any, any> {
                     <View style={styles.infoBox} key="info-froeschli-mitmachen">
                         <Text style={styles.infoBoxTitle}>Mitmachen</Text>
                         <Text style={styles.infoBoxDetails}>
-                            In unserer Abteilung hat es noch Platz! Du darfst gerne jederzeit unverbindlich bei uns vorbeischauen. Fülle einfach die Schnupperanmeldung auf der Webseite auf. Wir geben dann gerne die Daten bekannt.
+                            In unserer Abteilung hat es noch Platz! Du darfst gerne jederzeit unverbindlich bei uns vorbeischauen. Fülle einfach die Schnupperanmeldung auf der Webseite aus. Wir geben dann gerne die Daten bekannt.
                         </Text>
                     </View>
                 </ScrollView>
