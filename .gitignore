@@ -92,3 +92,5 @@ RNTester/Pods/*
 # Visual studio
 .vscode
 .vs
+
+/ios/build/
