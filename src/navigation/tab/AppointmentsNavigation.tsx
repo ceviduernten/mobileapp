@@ -27,7 +27,7 @@ function AppointmentsNavigation() {
             <Stack.Screen name="DetailScreen" component={DetailAppointmentContainer} options={({ route }) => {
                 return {
                     headerStyle: headerBar.headerStyleRed,
-                    headerTitle : props => <HeaderBar icon="" label={(route.params as any).title} />
+                    headerTitle : props => <HeaderBar icon="fire" label={(route.params as any).title} />
                 };
             }} />
             <Stack.Screen name="SignonAppointmentScreen" component={SignonAppointmentContainer} options={({ route }) => {

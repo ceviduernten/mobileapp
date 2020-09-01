@@ -4,6 +4,7 @@ import styles from "../../styles/screens/Appointments";
 import Icon from "react-native-vector-icons/FontAwesome5";
 import * as objectHelper from "../../helpers/ObjectHelper";
 import moment from "moment";
+import renderHyperlinkedText from "../../helpers/AppointmentHelper";
 
 export default class AppointmentDetail extends Component<any, any> {
     constructor(props: any) {
@@ -39,7 +40,7 @@ export default class AppointmentDetail extends Component<any, any> {
                 </View>
                 <View style={styles.detailInfoItem}>
                     <Text style={styles.detailInfoTitle}>Infos</Text>
-                    <Text>{appointment.infos}</Text>
+                    <Text>{renderHyperlinkedText(appointment.infos)}</Text>
                 </View>
                 <View style={styles.detailActions}>
                     <TouchableOpacity onPress={() => this.doAppointmentAction("signoff", appointment)} style={styles.signoff}>
