@@ -1,6 +1,6 @@
 import React from "react";
-import {withNextInputAutoFocusInput, handleTextInput} from "react-native-formik";
-import { compose } from "recompose";
+import {handleTextInput, withNextInputAutoFocusInput} from "react-native-formik";
+import {compose} from "recompose";
 // @ts-ignore
 import {TextField} from "@ubaids/react-native-material-textfield";
 import colors from "../../../styles/colors";

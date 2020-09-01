@@ -93,6 +93,8 @@ export default class AppointmentDetail extends Component<any, any> {
                     {(() => {
                         switch (store.state) {
                             case "success":
+                            case "success_signoff":
+                            case "success_signon":
                                 if (objectHelper.isEmpty(appointment)) {
                                     return this.renderNoInfos();
                                 }

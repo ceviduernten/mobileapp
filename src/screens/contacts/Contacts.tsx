@@ -3,7 +3,6 @@ import {SafeAreaView, ScrollView, Text, View} from "react-native";
 import styles from "../../styles/screens/Contacts";
 import store from "../../../store";
 import * as contactActions from "../../actions/contactActions";
-import Icon from "react-native-vector-icons/FontAwesome5";
 import {isEmpty} from "../../helpers/ObjectHelper";
 
 export default class Contacts extends Component<any, any> {

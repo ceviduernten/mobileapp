@@ -1,7 +1,6 @@
 import React, {Component, ReactElement} from "react";
 import {Button, SafeAreaView, Text, View} from "react-native";
 import styles from "../../styles/screens/Appointments";
-import Icon from "react-native-vector-icons/FontAwesome5";
 import {Formik} from "formik";
 import * as Yup from "yup";
 import {withNextInputAutoFocusForm} from "react-native-formik/index";
@@ -36,6 +35,26 @@ export default class SignonAppointment extends Component<any, any> {
         )
     }
 
+    renderWaitMessage() : ReactElement {
+        return (
+            <>
+                <View style={styles.detailInfoItem}>
+                    <Text>Dein Input wird verarbeitet. Sobald wird ein Resulat haben, melden wir uns ;-). Habe etwas Geduld.</Text>
+                </View>
+            </>
+        )
+    }
+
+    renderSuccessSignoff() : ReactElement {
+        return (
+            <>
+                <View style={styles.detailInfoItem}>
+                    <Text>Danke für deine Anmeldung. Bis zum Programm ;-)</Text>
+                </View>
+            </>
+        )
+    }
+
     validationSchema = Yup.object().shape({
         idAppointment: Yup.string().required("Appointment ist ein Pflichfeld."),
         name: Yup.string().required("Einen Geist können wir nicht brauchen in der Cevi. ;-)").min(2, "Dein Name kann nicht so kurz sein."),
@@ -55,8 +74,11 @@ export default class SignonAppointment extends Component<any, any> {
     }
 
     render() {
+        const {store, group} = this.props;
         const InputsContainer = withNextInputAutoFocusForm(View);
         if (!this.state.updatedInfos) return this.renderLoadingMessage();
+        if (store.state === "loading") return this.renderWaitMessage();
+        if (store.state === "success_signon") return this.renderSuccessSignoff(group);
         return (
             <SafeAreaView style={styles.wrapper}>
                 <Formik onSubmit={values => this.handleSubmit(values)} validationSchema={this.validationSchema} initialValues={this.state} enableReinitialize={true}>

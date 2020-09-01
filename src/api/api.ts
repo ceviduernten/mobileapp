@@ -109,14 +109,17 @@ export function getNextAppointmentOfGroup(group : string) {
 export function signOnForAppointment(values : any) {
     return new Promise<any>((resolve, reject) => {
         let apiClient = getAPIConfigurationUnsecured();
-        return apiClient.post(apiLinks.APPOINTMENTS +  + "/Signon", values)
+        return apiClient.post(apiLinks.APPOINTMENTS + "/Signon", values)
             .then(function (response : any) {
                 if (response.data.statusCode === 200) {
+                    console.log(response);
                     resolve(response.data.data);
                 } else {
+                    console.log(response);
                     reject(response.data.message);
                 }
             }).catch(function (error) {
+                console.log(error);
                 reject("Es konnte keine Verbindung zum Server hergestellt werden.");
             })
     });

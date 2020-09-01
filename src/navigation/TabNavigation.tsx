@@ -7,6 +7,7 @@ import AppointmentsNavigation from "./tab/AppointmentsNavigation";
 import ContactsNavigation from "./tab/ContactsNavigation";
 import InfoNavigation from "./tab/InfoNavigation";
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
+
 const Tab = createBottomTabNavigator();
 
 function TabNavigation() {

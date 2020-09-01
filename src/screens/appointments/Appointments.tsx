@@ -4,7 +4,6 @@ import styles from "../../styles/screens/Appointments";
 import store from "../../../store";
 import * as groupActions from "../../actions/groupActions";
 import * as appointmentActions from "../../actions/appointmentActions";
-import Icon from "react-native-vector-icons/FontAwesome5";
 
 export default class Appointments extends Component<any, any> {
     constructor(props: any) {

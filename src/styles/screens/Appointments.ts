@@ -66,6 +66,7 @@ export default StyleSheet.create({
         marginHorizontal: 16,
         borderRadius: 10,
         marginBottom: 5,
+        marginTop: 16
     },
     groupInfo: {
         backgroundColor: colors.darkBackground,

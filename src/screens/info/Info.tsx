@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 import {SafeAreaView, ScrollView, Text, TouchableOpacity, View} from "react-native";
 import styles from "../../styles/screens/Info";
-import Icon from "react-native-vector-icons/FontAwesome5";
 
 export default class Info extends Component<any, any> {
     constructor(props: any) {

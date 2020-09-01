@@ -7,6 +7,7 @@ import {createStackNavigator} from "@react-navigation/stack";
 import colors from "../../styles/colors";
 import HeaderBar from "../../components/shared/header/HeaderBar";
 import * as headerBar from "../../styles/shared/headerBar";
+
 const Stack = createStackNavigator();
 
 function AppointmentsNavigation() {

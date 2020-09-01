@@ -42,7 +42,7 @@ function getAppointmentOfGroupFromAPI(dispatch : any, group : string) : any {
 function signOnForAppointment(dispatch : any, values : any) : any {
     dispatch(changeState("loading"));
     api.signOnForAppointment(values).then(function (res) {
-        dispatch(receiveAppointment(res));
+        dispatch(changeState("success_signon"));
     }).catch(function (error) {
         dispatch(receiveAppointmentError(error));
     });
@@ -51,7 +51,7 @@ function signOnForAppointment(dispatch : any, values : any) : any {
 function signOffForAppointment(dispatch : any, values : any) : any {
     dispatch(changeState("loading"));
     api.signOffForAppointment(values).then(function (res) {
-        dispatch(receiveAppointment(res));
+        dispatch(changeState("success_signoff"));
     }).catch(function (error) {
         dispatch(receiveAppointmentError(error));
     });

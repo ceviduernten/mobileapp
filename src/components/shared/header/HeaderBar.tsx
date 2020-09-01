@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {View, Text} from "react-native";
+import {Text, View} from "react-native";
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import * as headerBar from "../../../styles/shared/headerBar";
 

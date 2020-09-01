@@ -7,6 +7,7 @@ import {createStackNavigator} from "@react-navigation/stack";
 import colors from "../../styles/colors";
 import * as headerBar from "../../styles/shared/headerBar";
 import HeaderBar from "../../components/shared/header/HeaderBar";
+
 const Stack = createStackNavigator();
 
 function InfoNavigation() {

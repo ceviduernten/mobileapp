@@ -2,7 +2,6 @@ import React, {Component} from "react";
 import {SafeAreaView, Text, View} from "react-native";
 import styles from "../../styles/screens/Events";
 import store from "../../../store";
-import Icon from "react-native-vector-icons/FontAwesome5";
 import * as eventHelpers from "../../helpers/EventHelpers";
 import moment from "moment";
 
