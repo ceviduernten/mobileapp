@@ -77,8 +77,8 @@ RNTester/build
 /packages/react-native-codegen/**/*.xcodeproj
 
 # CocoaPods
-/ios/Pods/*
-/ios/Podfile.lock
+ios/Pods/*
+ios/Podfile.lock
 /RNTester/Gemfile.lock
 
 # Ignore RNTester specific Pods, but keep the __offline_mirrors__ here.
@@ -93,4 +93,4 @@ RNTester/Pods/*
 .vscode
 .vs
 
-/ios/build/*
+ios/build/*
