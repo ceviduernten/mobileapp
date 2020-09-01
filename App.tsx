@@ -16,6 +16,15 @@ import {Provider} from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import Navigation from "./src/navigation/Navigation";
 import colors from './src/styles/colors';
+import {NavigationContainer, DefaultTheme} from "@react-navigation/native";
+
+const CeviDuerntenTheme = {
+    ...DefaultTheme,
+    colors: {
+        ...DefaultTheme.colors,
+        backgroundColor: colors.white,
+    },
+};
 
 const App = () => {
   const usingHermes = typeof HermesInternal === 'object' && HermesInternal !== null;
@@ -25,7 +34,9 @@ const App = () => {
         <PersistGate persistor={persistor}>
           <StatusBar backgroundColor={colors.darkAccentColor} barStyle="dark-content" />
           <View style={styles.container}>
-            <Navigation/>
+              <NavigationContainer theme={CeviDuerntenTheme}>
+                  <Navigation/>
+              </NavigationContainer>
           </View>
         </PersistGate>
       </Provider>
