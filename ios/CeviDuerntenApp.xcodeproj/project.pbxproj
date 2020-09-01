@@ -11,6 +11,7 @@
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		8C2CFD9F24CF72A5000DF11E /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2CFD9E24CF72A5000DF11E /* File.swift */; };
 		C6800C05916172F336AF88DB /* libPods-CeviDuerntenApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA15194B83F8C5B4A443F2C0 /* libPods-CeviDuerntenApp.a */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +45,8 @@
 		8C0E9F8123B3AEEC00AECAAF /* Foundation.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Foundation.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		8C0E9F8223B3AEEC00AECAAF /* Zocial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Zocial.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		8C0E9F8323B3AEEC00AECAAF /* Feather.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Feather.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
+		8C2CFD9D24CF72A5000DF11E /* CeviDuerntenApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CeviDuerntenApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		8C2CFD9E24CF72A5000DF11E /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		8CCB94DE23BA723D00039502 /* de-CH */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "de-CH"; path = "de-CH.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		CA15194B83F8C5B4A443F2C0 /* libPods-CeviDuerntenApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CeviDuerntenApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA6101055410F27D25AD3481 /* Pods-CeviDuerntenApp-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CeviDuerntenApp-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-CeviDuerntenApp-tvOSTests/Pods-CeviDuerntenApp-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -79,6 +82,8 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				8C2CFD9E24CF72A5000DF11E /* File.swift */,
+				8C2CFD9D24CF72A5000DF11E /* CeviDuerntenApp-Bridging-Header.h */,
 			);
 			name = CeviDuerntenApp;
 			sourceTree = "<group>";
@@ -198,6 +203,7 @@
 				TargetAttributes = {
 					13B07F861A680F5B00A75B9A = {
 						DevelopmentTeam = 64C3N566R2;
+						LastSwiftMigration = 1160;
 					};
 				};
 			};
@@ -269,6 +275,7 @@
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Octicons.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Zocial.ttf",
+				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -288,6 +295,7 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Octicons.ttf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SimpleLineIcons.ttf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Zocial.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -343,6 +351,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				8C2CFD9F24CF72A5000DF11E /* File.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,6 +377,7 @@
 			baseConfigurationReference = ECE1EA214D9E58088CDA3BBA /* Pods-CeviDuerntenApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = 64C3N566R2;
@@ -380,6 +390,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ch.ceviduernten.mobileapp;
 				PRODUCT_NAME = "Cevi Dürnten";
+				SWIFT_OBJC_BRIDGING_HEADER = "CeviDuerntenApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -390,6 +403,7 @@
 			baseConfigurationReference = EA15766526D433796B6943F0 /* Pods-CeviDuerntenApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 64C3N566R2;
 				INFOPLIST_FILE = CeviDuerntenApp/Info.plist;
@@ -401,6 +415,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ch.ceviduernten.mobileapp;
 				PRODUCT_NAME = "Cevi Dürnten";
+				SWIFT_OBJC_BRIDGING_HEADER = "CeviDuerntenApp-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
