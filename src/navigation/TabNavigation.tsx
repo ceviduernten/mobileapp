@@ -1,6 +1,4 @@
 import React from "react";
-import {createAppContainer} from "react-navigation";
-import {createBottomTabNavigator} from "react-navigation-tabs"
 import colors from "../styles/colors";
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import HomeNavigation from "./tab/HomeNavigation";
@@ -8,46 +6,12 @@ import EventsNavigation from "./tab/EventsNavigation";
 import AppointmentsNavigation from "./tab/AppointmentsNavigation";
 import ContactsNavigation from "./tab/ContactsNavigation";
 import InfoNavigation from "./tab/InfoNavigation";
+import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
+const Tab = createBottomTabNavigator();
 
-const TabNavigation = createBottomTabNavigator({
-        Home: {
-            screen: HomeNavigation,
-            navigationOptions: {
-                tabBarIcon: ({tintColor}) => ( <Icon name={'home'} size={22} style={{color: tintColor}} />),
-                tabBarLabel: "Home"
-            }
-        },
-        Events: {
-            screen: EventsNavigation,
-            navigationOptions: {
-                tabBarIcon: ({tintColor}) => ( <Icon name={'calendar'} size={22} style={{color: tintColor}} />),
-                tabBarLabel: "Anlässe"
-            }
-        },
-        Appointments: {
-            screen: AppointmentsNavigation,
-            navigationOptions: {
-                tabBarIcon: ({tintColor}) => ( <Icon name={'fire'} size={22} style={{color: tintColor}} />),
-                tabBarLabel: "Chästlizettel"
-            }
-        },
-        Contacts: {
-            screen: ContactsNavigation,
-            navigationOptions: {
-                tabBarIcon: ({tintColor}) => ( <Icon name={'address-card'} size={22} style={{color: tintColor}} />),
-                tabBarLabel: "Kontakte"
-            }
-        },
-        Info: {
-            screen: InfoNavigation,
-            navigationOptions: {
-                tabBarIcon: ({tintColor}) => ( <Icon name={'info'} size={22} style={{color: tintColor}} />),
-                tabBarLabel: "Über uns"
-            }
-        },
-    },{
-        initialRouteName: 'Home',
-            tabBarOptions: {
+function TabNavigation() {
+    return (
+        <Tab.Navigator initialRouteName="Home" tabBarOptions={{
             style: {
                 backgroundColor: colors.white,
                 paddingTop: 4
@@ -58,8 +22,29 @@ const TabNavigation = createBottomTabNavigator({
             showIcon: true,
             adaptive: true,
             keyboardHidesTabBar: true
-        },
-    }
-);
+        }}>
+            <Tab.Screen name="Home" component={HomeNavigation} options={{
+                tabBarIcon: ({color}) => ( <Icon name={'home'} size={22} style={{color: color}} />),
+                tabBarLabel: "Home"
+            }} />
+            <Tab.Screen name="Events" component={EventsNavigation} options={{
+                tabBarIcon: ({color}) => ( <Icon name={'calendar'} size={22} style={{color: color}} />),
+                tabBarLabel: "Anlässe"
+            }} />
+            <Tab.Screen name="Appointments" component={AppointmentsNavigation} options={{
+                tabBarIcon: ({color}) => ( <Icon name={'fire'} size={22} style={{color: color}} />),
+                tabBarLabel: "Chästlizettel"
+            }} />
+            <Tab.Screen name="Contacts" component={ContactsNavigation} options={{
+                tabBarIcon: ({color}) => ( <Icon name={'address-card'} size={22} style={{color: color}} />),
+                tabBarLabel: "Kontakte"
+            }} />
+            <Tab.Screen name="Info" component={InfoNavigation} options={{
+                tabBarIcon: ({color}) => ( <Icon name={'info'} size={22} style={{color: color}} />),
+                tabBarLabel: "Über uns"
+            }} />
+        </Tab.Navigator>
+    );
+}
 
-export default createAppContainer(TabNavigation);
+export default TabNavigation;

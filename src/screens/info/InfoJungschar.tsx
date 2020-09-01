@@ -11,10 +11,6 @@ export default class InfoJungschar extends Component<any, any> {
     render() {
         return (
             <SafeAreaView style={styles.wrapper}>
-                <View style={styles.mainHeaderBox}>
-                    <Icon name={'fire'} size={30} style={styles.icon} />
-                    <Text style={styles.mainHeaderTitle}>Jungschar</Text>
-                </View>
                 <ScrollView>
                     <View style={styles.infoBox} key="info-jungschar-intro">
                         <Text style={styles.infoBoxDetails}>

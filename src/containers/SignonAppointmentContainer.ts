@@ -1,5 +1,5 @@
 import {connect} from "react-redux";
-import AppointmentDetail from "../screens/appointments/AppointmentDetail";
+import SignonAppointment from "../screens/appointments/SignonAppointment";
 
 function mapStateToProps(store : any) {
     return {
@@ -9,5 +9,5 @@ function mapStateToProps(store : any) {
     }
 }
 
-const SignoffAppointmentContainer = connect(mapStateToProps)(AppointmentDetail);
-export default SignoffAppointmentContainer;
+const SignonAppointmentContainer = connect(mapStateToProps)(SignonAppointment);
+export default SignonAppointmentContainer;

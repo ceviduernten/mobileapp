@@ -21,9 +21,10 @@ export default class Events extends Component<any, any> {
         store.dispatch(eventActions.getEvents());
     }
 
-    onPress(event : object) : any {
+    onPress(event : any) : any {
         store.dispatch(eventActions.setCurrentEvent(event));
         this.props.navigation.navigate('DetailScreen', "detail");
+        this.props.navigation.navigate('DetailScreen', {title : event.summary, icon: eventHelpers.getTypeIcon(event.eventType)});
     }
 
     renderEmptyView(errorMessage : string) : ReactElement {

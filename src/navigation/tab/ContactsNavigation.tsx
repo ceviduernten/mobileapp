@@ -1,18 +1,27 @@
 import React from "react";
-import {createAppContainer} from "react-navigation";
-import {createStackNavigator} from "react-navigation-stack";
 import ContactsContainer from "../../containers/ContactsContainer";
+import {createStackNavigator} from "@react-navigation/stack";
+import colors from "../../styles/colors";
+import * as headerBar from "../../styles/shared/headerBar";
+import HeaderBar from "../../components/shared/header/HeaderBar";
+const Stack = createStackNavigator();
 
-const ContactsNavigation = createStackNavigator({
-        Contacts: {
-            screen: ContactsContainer,
-            navigationOptions: {
-                title: "Kontakte"
-            }
-        },
-    },{
-        initialRouteName: 'Contacts',
-    }
-);
+function ContactsNavigation() {
+    return (
+        <Stack.Navigator initialRouteName="Contacts" screenOptions={{
+            cardStyle: { backgroundColor: colors.white },
+            headerBackTitleStyle: headerBar.headerBackTitleStyle,
+            headerBackTitle: "Liste",
+            headerStyle: headerBar.headerStyle,
+            headerTitleStyle: headerBar.headerTitleStyle,
+            headerTintColor: headerBar.headerTintColor,
+            header: undefined,
+        }}>
+            <Stack.Screen name="Contacts" component={ContactsContainer} options={{
+                headerTitle : props => <HeaderBar icon="users" label="Kontakte" />
+            }} />
+        </Stack.Navigator>
+    );
+}
 
-export default createAppContainer(ContactsNavigation);
+export default ContactsNavigation;

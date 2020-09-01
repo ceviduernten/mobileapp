@@ -11,10 +11,6 @@ export default class InfoFroeschli extends Component<any, any> {
     render() {
         return (
             <SafeAreaView style={styles.wrapper}>
-                <View style={styles.mainHeaderBox}>
-                    <Icon name={'frog'} size={30} style={styles.icon} />
-                    <Text style={styles.mainHeaderTitle}>Fröschli</Text>
-                </View>
                 <ScrollView>
                     <View style={styles.infoBox} key="info-froeschli-intro">
                         <Text style={styles.infoBoxDetails}>

@@ -79,10 +79,6 @@ export default class Appointments extends Component<any, any> {
         let refreshing = store.state === "loading";
         return (
             <SafeAreaView style={styles.wrapper}>
-                <View style={styles.itemTitle}>
-                    <Icon name={'users'} size={30} style={styles.detailIcon} />
-                    <Text style={styles.detailMainHeader}>Gruppen</Text>
-                </View>
                 <FlatList
                     data={groups}
                     keyExtractor={(item : any) => item.idGroup}

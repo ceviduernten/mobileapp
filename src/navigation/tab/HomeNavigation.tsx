@@ -1,19 +1,17 @@
 import React from "react";
-import {createAppContainer} from "react-navigation";
-import {createStackNavigator} from "react-navigation-stack";
 import Home from "../../screens/home/Home";
+import {createStackNavigator} from "@react-navigation/stack";
+import colors from "../../styles/colors";
+const Stack = createStackNavigator();
 
-const HomeNavigation = createStackNavigator({
-        Home: {
-            screen: Home,
-            navigationOptions: {
-                title: "Home",
-                header: null,
-            }
-        }
-    },{
-        initialRouteName: 'Home'
-    }
-);
+function HomeNavigation() {
+    return (
+        <Stack.Navigator initialRouteName="Home" screenOptions={{headerShown: false, cardStyle: {backgroundColor: colors.white}}}>
+            <Stack.Screen name="Home" component={Home} options={{
+                title: "Home"
+            }} />
+        </Stack.Navigator>
+    );
+}
 
-export default createAppContainer(HomeNavigation);
+export default HomeNavigation;

@@ -11,10 +11,6 @@ export default class InfoCeviEh extends Component<any, any> {
     render() {
         return (
             <SafeAreaView style={styles.wrapper}>
-                <View style={styles.mainHeaderBox}>
-                    <Icon name={'street-view'} size={30} style={styles.icon} />
-                    <Text style={styles.mainHeaderTitle}>Cevi Eh!</Text>
-                </View>
                 <ScrollView>
                     <View style={styles.infoBox} key="info-cevieh-intro">
                         <Text style={styles.infoBoxDetails}>

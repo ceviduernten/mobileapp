@@ -1,123 +1,78 @@
 import React, {Component, ReactElement} from "react";
-import {SafeAreaView, ScrollView, Text, TouchableOpacity, View} from "react-native";
+import {Button, SafeAreaView, Text, View} from "react-native";
 import styles from "../../styles/screens/Appointments";
 import Icon from "react-native-vector-icons/FontAwesome5";
-import * as objectHelper from "../../helpers/ObjectHelper";
+import {Formik} from "formik";
+import * as Yup from "yup";
+import {withNextInputAutoFocusForm} from "react-native-formik/index";
+import {CustomTextInput} from "../../components/shared/forms/CustomTextInput";
+import {MultilineTextInput} from "../../components/shared/forms/MultilineTextInput";
 import moment from "moment";
+import store from "../../../store";
+import * as appointmentActions from "../../actions/appointmentActions";
 
-export default class SignoffAppointment extends Component<any, any> {
+
+export default class SignonAppointment extends Component<any, any> {
     constructor(props: any) {
         super(props);
-    }
-
-    doAppointmentAction(action : string) {
-        switch (action) {
-            case "signon":
-                this.props.navigation.navigate('SignonAppointmentScreen', {title : "Anmelden"});
-                break;
-            case "signoff":
-                this.props.navigation.navigate('SignoffAppointmentScreen', {title : "Abmelden"});
-                break;
-            default:
-                // To nothing, stay on the screen
-                break;
+        this.state = {
+            idAppointment : "",
+            name : "",
+            message : "",
+            type: 1,
+            groupName : "",
+            updatedInfos: false
         }
-    }
-
-    renderDetailAppointment() : ReactElement {
-        const {appointment} = this.props;
-        return (
-            <>
-                <View style={styles.detailInfoItem}>
-                    <Text style={styles.detailInfoTitle}>Datum und Zeit</Text>
-                    <Text>{moment(appointment.date).format("DD.MM.YYYY")}, {appointment.time}</Text>
-                </View>
-                <View style={styles.detailInfoItem}>
-                    <Text style={styles.detailInfoTitle}>Ort</Text>
-                    <Text>{appointment.location}</Text>
-                </View>
-                <View style={styles.detailInfoItem}>
-                    <Text style={styles.detailInfoTitle}>Infos</Text>
-                    <Text>{appointment.infos}</Text>
-                </View>
-                <View style={styles.detailActions}>
-                    <TouchableOpacity onPress={() => this.doAppointmentAction("signoff")} style={styles.signoff}>
-                        <Text style={styles.textAction}>Abmelden</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity onPress={() => this.doAppointmentAction("signon")} style={styles.signon}>
-                        <Text style={styles.textAction}>Anmelden</Text>
-                    </TouchableOpacity>
-                </View>
-            </>
-        );
-    }
-
-    renderNoInfos() : ReactElement {
-        return (
-            <>
-                <View style={styles.detailInfoItem}>
-                    <Text>Kein Chästlizettel vorhanden.</Text>
-                </View>
-            </>
-        )
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     renderLoadingMessage() : ReactElement {
         return (
             <>
                 <View style={styles.detailInfoItem}>
-                    <Text>Aktueller Chästlizettel wird abgerufen.</Text>
+                    <Text>Die Daten werden abgerufen.</Text>
                 </View>
             </>
         )
     }
 
-    renderError(errorMessage : string) : ReactElement {
-        return (
-            <>
-                <View style={styles.detailInfoItem}>
-                    <Text>{errorMessage}</Text>
-                </View>
-            </>
-        )
+    validationSchema = Yup.object().shape({
+        idAppointment: Yup.string().required("Appointment ist ein Pflichfeld."),
+        name: Yup.string().required("Einen Geist können wir nicht brauchen in der Cevi. ;-)").min(2, "Dein Name kann nicht so kurz sein."),
+        type: Yup.number().required("Type ist ein Pflichtfeld.")
+    });
+
+    componentDidMount() {
+        const {group, store, appointment} = this.props;
+        if (!this.state.updatedInfos && group !== undefined && appointment !== undefined) {
+            let appointmentDate = moment(appointment.date).format("DD.MM.YYYY")
+            this.setState({"groupName": group.name, "appointmentDate": appointmentDate, updatedInfos: true, idAppointment: appointment.idAppointment});
+        }
+    }
+
+    handleSubmit(values : any) : void {
+        store.dispatch(appointmentActions.signOn(values));
     }
 
     render() {
-        const {group, store, appointment} = this.props;
+        const InputsContainer = withNextInputAutoFocusForm(View);
+        if (!this.state.updatedInfos) return this.renderLoadingMessage();
         return (
             <SafeAreaView style={styles.wrapper}>
-                <View style={styles.detailTitle}>
-                    <Icon name={'fire'} size={30} style={styles.detailIcon} />
-                    <Text style={styles.detailMainHeader}>{group.name}</Text>
-                </View>
-                <ScrollView>
-                    {(() => {
-                        switch (store.state) {
-                            case "success":
-                                if (objectHelper.isEmpty(appointment)) {
-                                    return this.renderNoInfos();
-                                }
-                                return this.renderDetailAppointment();
-                            case "loading":
-                                return this.renderLoadingMessage();
-                            case "error":
-                                return this.renderError(store.errorMessage);
-                            default:
-                                return null;
-                        }
-                    })()}
-                    <View style={styles.groupInfo}>
-                        <Text style={styles.detailInfoTitleHeader}>Zur Gruppe</Text>
-                        <View style={styles.groupInfoBox}>
-                            <Text style={styles.detailInfoTitle}>Leiter</Text>
-                            <Text>{group.leaders}</Text>
-                        </View>
-                        <View style={styles.groupInfoBox}>
-                            <Text style={styles.detailInfoTitle}>Beschreibung</Text>
-                            <Text>{group.description}</Text>
-                        </View>
-                    </View>
-                </ScrollView>
+                <Formik onSubmit={values => this.handleSubmit(values)} validationSchema={this.validationSchema} initialValues={this.state} enableReinitialize={true}>
+                    {(props : any) => {
+                        return (
+                            <InputsContainer style={{ paddingLeft: 24, paddingRight: 24 }}>
+                                <CustomTextInput label="Cevi-Gruppe" name="groupName" type="text" disabled={true} />
+                                <CustomTextInput label="Cevi-Programm" name="appointmentDate" type="text" disabled={true} />
+                                <CustomTextInput label="Dein Name (Ceviname)" name="name" type="text" />
+                                <MultilineTextInput label="Nachricht an Leiter" name="message" type="text" />
+
+                                <Button  onPress={props.handleSubmit} title="Abmeldung abschicken" />
+                            </InputsContainer>
+                        );
+                    }}
+                </Formik>
             </SafeAreaView>
         );
     }

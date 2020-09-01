@@ -75,10 +75,6 @@ export default class Contacts extends Component<any, any> {
         const {store} = this.props;
         return (
             <SafeAreaView style={styles.wrapper}>
-                <View style={styles.mainHeaderBox}>
-                    <Icon name={'users'} size={30} style={styles.icon} />
-                    <Text style={styles.mainHeaderTitle}>Kontakte</Text>
-                </View>
                 {(() => {
                     switch (store.state) {
                         case "success":

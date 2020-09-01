@@ -16,10 +16,6 @@ export default class Info extends Component<any, any> {
     render() {
         return (
             <SafeAreaView style={styles.wrapper}>
-                <View style={styles.mainHeaderBox}>
-                    <Icon name={'info'} size={30} style={styles.icon} />
-                    <Text style={styles.mainHeaderTitle}>Informationen</Text>
-                </View>
                 <View style={styles.infoBox} key="about-us">
                     <Text style={styles.infoBoxTitle}>Was ist der Cevi?</Text>
                     <Text style={styles.infoBoxDetails}>

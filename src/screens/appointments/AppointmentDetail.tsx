@@ -1,5 +1,5 @@
 import React, {Component, ReactElement} from "react";
-import {SafeAreaView, ScrollView, Text, View} from "react-native";
+import {SafeAreaView, ScrollView, Text, TouchableOpacity, View} from "react-native";
 import styles from "../../styles/screens/Appointments";
 import Icon from "react-native-vector-icons/FontAwesome5";
 import * as objectHelper from "../../helpers/ObjectHelper";
@@ -8,6 +8,21 @@ import moment from "moment";
 export default class AppointmentDetail extends Component<any, any> {
     constructor(props: any) {
         super(props);
+    }
+
+    doAppointmentAction(action : string, appointment : any) {
+        let dateString = moment(appointment.date).format("DD.MM.YYYY");
+        switch (action) {
+            case "signon":
+                this.props.navigation.navigate('SignonAppointmentScreen', {title : "Anmeldung"});
+                break;
+            case "signoff":
+                this.props.navigation.navigate('SignoffAppointmentScreen', {title : "Abmeldung"});
+                break;
+            default:
+                // To nothing, stay on the screen
+                break;
+        }
     }
 
     renderDetailAppointment() : ReactElement {
@@ -25,6 +40,16 @@ export default class AppointmentDetail extends Component<any, any> {
                 <View style={styles.detailInfoItem}>
                     <Text style={styles.detailInfoTitle}>Infos</Text>
                     <Text>{appointment.infos}</Text>
+                </View>
+                <View style={styles.detailActions}>
+                    <TouchableOpacity onPress={() => this.doAppointmentAction("signoff", appointment)} style={styles.signoff}>
+                        <Icon name={'sign-out-alt'} size={16} style={styles.icon} />
+                        <Text style={styles.textAction}>Abmelden</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => this.doAppointmentAction("signon", appointment)} style={styles.signon}>
+                        <Icon name={'sign-in-alt'} size={16} style={styles.icon} />
+                        <Text style={styles.textAction}>Anmelden</Text>
+                    </TouchableOpacity>
                 </View>
             </>
         );
@@ -64,10 +89,6 @@ export default class AppointmentDetail extends Component<any, any> {
         const {group, store, appointment} = this.props;
         return (
             <SafeAreaView style={styles.wrapper}>
-                <View style={styles.detailTitle}>
-                    <Icon name={'fire'} size={30} style={styles.detailIcon} />
-                    <Text style={styles.detailMainHeader}>{group.name}</Text>
-                </View>
                 <ScrollView>
                     {(() => {
                         switch (store.state) {

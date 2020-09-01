@@ -16,10 +16,6 @@ export default class EventDetail extends Component<any, any> {
         let sameDay = eventHelpers.sameDay(new Date(event.start), new Date(event.end));
         return (
             <SafeAreaView style={styles.wrapper}>
-                <View style={styles.itemTitle}>
-                    <Icon name={eventHelpers.getTypeIcon(event.eventType)} size={30} style={styles.detailIcon} />
-                    <Text style={styles.detailMainHeader}>{event.summary}</Text>
-                </View>
                 <View style={styles.detailInfoItem}>
                     <Text style={styles.detailInfoTitle}>{sameDay ? "Datum" : "Von"}</Text>
                     <Text>{moment(event.start).format("DD.MM.YYYY")}</Text>

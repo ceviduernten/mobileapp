@@ -87,5 +87,39 @@ export default StyleSheet.create({
     },
     groupInfoBox: {
         marginTop: 8
+    },
+    detailActions: {
+        flex: 1,
+        flexDirection: "row",
+        marginVertical: 8,
+        marginHorizontal: 16,
+        marginBottom: 5,
+    },
+    signoff: {
+        backgroundColor: colors.ceviBlue,
+        borderRadius: 10,
+        width: '48%',
+        marginRight: 8,
+        flexDirection: "row",
+        padding: 16
+    },
+    signon: {
+        marginLeft: 8,
+        backgroundColor: colors.ceviBlue,
+        width: '48%',
+        borderRadius: 10,
+        flexDirection: "row",
+        padding: 16
+    },
+    icon: {
+        marginRight: 12,
+        color: colors.white
+    },
+    textAction: {
+        fontSize: 14,
+        textAlign: "left",
+        color: colors.white,
+        fontWeight: "700",
+        textTransform: "uppercase",
     }
 });

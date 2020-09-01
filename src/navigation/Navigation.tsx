@@ -1,18 +1,15 @@
-import {createAppContainer, createSwitchNavigator} from "react-navigation"
 import TabNavigation from "./TabNavigation";
+import {createStackNavigator} from "@react-navigation/stack";
+import React from "react";
+const Stack = createStackNavigator();
 
-export default Navigation = createAppContainer(
-    createSwitchNavigator(
-        {
-            Unsecured: {
-                screen: TabNavigation,
-            },
-            Secured: {
-                screen: TabNavigation
-            }
-        },
-        {
-            initialRouteName: 'Secured',
-        }
-    )
-);
+function Navigation() {
+    return (
+        <Stack.Navigator initialRouteName="Secured" screenOptions={{headerShown: false, cardStyle: { backgroundColor: 'white' }}}>
+            <Stack.Screen name="Unsecured" component={TabNavigation} />
+            <Stack.Screen name="Secured" component={TabNavigation} />
+        </Stack.Navigator>
+    );
+}
+
+export default Navigation;

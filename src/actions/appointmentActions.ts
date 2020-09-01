@@ -39,8 +39,38 @@ function getAppointmentOfGroupFromAPI(dispatch : any, group : string) : any {
     });
 }
 
+function signOnForAppointment(dispatch : any, values : any) : any {
+    dispatch(changeState("loading"));
+    api.signOnForAppointment(values).then(function (res) {
+        dispatch(receiveAppointment(res));
+    }).catch(function (error) {
+        dispatch(receiveAppointmentError(error));
+    });
+}
+
+function signOffForAppointment(dispatch : any, values : any) : any {
+    dispatch(changeState("loading"));
+    api.signOffForAppointment(values).then(function (res) {
+        dispatch(receiveAppointment(res));
+    }).catch(function (error) {
+        dispatch(receiveAppointmentError(error));
+    });
+}
+
 export function getAppointmentOfGroup(group : string) : any {
     return function (dispatch : any) {
         getAppointmentOfGroupFromAPI(dispatch, group);
+    }
+}
+
+export function signOff(values : any) : any {
+    return function (dispatch : any) {
+        signOffForAppointment(dispatch, values);
+    }
+}
+
+export function signOn(values : any) : any {
+    return function (dispatch : any) {
+        signOnForAppointment(dispatch, values);
     }
 }
