@@ -44,6 +44,8 @@ buck-out
 local.properties
 *.iml
 /android/build/
+/android/app/build/
+/android/app/release/
 
 # Node
 node_modules
