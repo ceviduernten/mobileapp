@@ -90,7 +90,7 @@ export default class SignonAppointment extends Component<any, any> {
                                 <CustomTextInput label="Dein Name (Ceviname)" name="name" type="text" />
                                 <MultilineTextInput label="Nachricht an Leiter" name="message" type="text" />
 
-                                <Button  onPress={props.handleSubmit} title="Abmeldung abschicken" />
+                                <Button  onPress={props.handleSubmit} title="Anmeldung abschicken" />
                             </InputsContainer>
                         );
                     }}
