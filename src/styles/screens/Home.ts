@@ -1,5 +1,10 @@
-import {Platform, StyleSheet} from "react-native";
+import {Platform, StyleSheet, Dimensions} from "react-native";
 import colors from "../colors";
+
+function isLandscape() {
+    const dim = Dimensions.get("screen")
+    return dim.width >= dim.height
+}
 
 export default StyleSheet.create({
     wrapper : {
@@ -25,8 +30,8 @@ export default StyleSheet.create({
         width: "100%"
     },
     logoWrapper: {
-        marginLeft: 32,
-        marginRight: 32,
+        marginLeft: (Platform.OS === "ios" && Platform.isPad) ? (isLandscape() ? "33%" : "15%") : 32,
+        marginRight: (Platform.OS === "ios" && Platform.isPad) ? (isLandscape() ? "33%" : "15%") : 32,
         marginBottom: 40
     },
     textWrapper: {

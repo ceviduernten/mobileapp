@@ -7,6 +7,7 @@ import AppointmentsNavigation from "./tab/AppointmentsNavigation";
 import ContactsNavigation from "./tab/ContactsNavigation";
 import InfoNavigation from "./tab/InfoNavigation";
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
+import {Platform} from "react-native";
 
 const Tab = createBottomTabNavigator();
 
@@ -15,7 +16,7 @@ function TabNavigation() {
         <Tab.Navigator initialRouteName="Home" tabBarOptions={{
             style: {
                 backgroundColor: colors.white,
-                paddingTop: 4
+                paddingTop: (Platform.OS === "ios" && Platform.isPad) ? 0 : 4
             },
             activeTintColor: colors.ceviBlue,
             inactiveTintColor: colors.ceviRed,
