@@ -32,7 +32,7 @@ const App = () => {
   return (
       <Provider store={store}>
         <PersistGate persistor={persistor}>
-          <StatusBar backgroundColor={colors.darkAccentColor} barStyle="dark-content" />
+          <StatusBar backgroundColor={colors.darkAccentColor} barStyle="light-content" />
           <View style={styles.container}>
               <NavigationContainer theme={CeviDuerntenTheme}>
                   <Navigation/>
