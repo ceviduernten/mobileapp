@@ -1,8 +1,7 @@
 import {Linking, Text} from "react-native";
 import React from "react";
-import _default from "react-native-reanimated/lib/typescript/ReanimatedModuleCompat";
 
-export default function renderHyperlinkedText(string, baseStyles = {}, linkStyles = {}, openLink) {
+export default function renderHyperlinkedText(string : any, baseStyles = {}, linkStyles = {}, openLink : any) {
     if (typeof string !== 'string') return null;
     const httpRegex = /http/g;
     const wwwRegex = /www/g;
@@ -52,7 +51,7 @@ export default function renderHyperlinkedText(string, baseStyles = {}, linkStyle
     return <Text style={baseStyles}>{ string }</Text>;
 }
 
-function getMatchedIndices(regex, text) {
+function getMatchedIndices(regex : any, text: any) {
     const result = [];
     let match;
     do {

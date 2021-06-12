@@ -88,6 +88,7 @@ export default class AppointmentDetail extends Component<any, any> {
 
     render() {
         const {group, store, appointment} = this.props;
+        console.log(group);
         return (
             <SafeAreaView style={styles.wrapper}>
                 <ScrollView>
@@ -113,6 +114,11 @@ export default class AppointmentDetail extends Component<any, any> {
                         <View style={styles.groupInfoBox}>
                             <Text style={styles.detailInfoTitle}>Leiter</Text>
                             <Text>{group.leaders}</Text>
+                        </View>
+                        <View style={styles.groupInfoBox}>
+                            <Text style={styles.detailInfoTitle}>Kontakt (Mail bevorzugt)</Text>
+                            <Text>Mail: {group.mailLeaders}</Text>
+                            <Text>Telefon: {group.numberNotification}</Text>
                         </View>
                         <View style={styles.groupInfoBox}>
                             <Text style={styles.detailInfoTitle}>Beschreibung</Text>
